@@ -1,5 +1,5 @@
 !!!
-%html(ng-app="")
+%html
   %head
     %meta{:charset => "utf-8"}/
     / Always force latest IE rendering engine (even in intranet) &amp; Chrome Frame
@@ -12,5 +12,3 @@
   %body{:class => page_classes}
     #main{:role => "main"}
       = yield
-  = partial "annotations-template.haml"
-  = partial "replies-template.haml"
