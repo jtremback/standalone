@@ -1,2 +1,11 @@
 - content_for :head do
   %title Standalone
+
+= partial "annotations-template.haml"
+
+%script{:id => "free_item_renderer.html", :type => "text/ng-template"}  
+  %ul
+    %li{"ng-include" => "'free_item_renderer.html'", "ng-repeat" => "data in data.nodes"}
+
+%ul
+  %li{"ng-include" => "'annotations-template.html'", "ng-repeat" => "data in tree"}
