@@ -3,9 +3,7 @@
 
 = partial "annotations-template.haml"
 
-%script{:id => "free_item_renderer.html", :type => "text/ng-template"}  
-  %ul
-    %li{"ng-include" => "'free_item_renderer.html'", "ng-repeat" => "data in data.nodes"}
+= partial "replies-template.haml"
 
 %ul
-  %li{"ng-include" => "'annotations-template.html'", "ng-repeat" => "data in tree"}
+  %li{"ng-include" => "'annotations-template.html'", "ng-repeat" => "annotation in annotations"}

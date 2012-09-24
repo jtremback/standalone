@@ -1,1 +1,19 @@
-[{name: "Node", snorp: "crap", nodes: [ {name: "Nope", snorp: "crop", nodes: [{name:"Nape", snorp: "crip", nodes: []}]} ]}]
+[
+  {
+    name: "Node", 
+    snorp: "crap", 
+    nodes: [ 
+      {
+        name: "Nope", 
+        snorp: "crop", 
+        nodes: [
+          {
+            name:"Nape", 
+            snorp: "crip", 
+            nodes: []
+          }
+        ]
+      }
+    ]
+  }
+]

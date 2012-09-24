@@ -1,3 +1,34 @@
-%script{:id => "annotations-template.html", :type => "text/ng-template"}  
+%script{:id => "annotations-template.html", :type => "text/ng-template"}
+  {{annotation.username}}
   %ul
-    %li{"ng-include" => "'free_item_renderer.html'", "ng-repeat" => "data in data.nodes"}
+    %li{"ng-include" => "'free_item_renderer.html'", "ng-repeat" => "reply in annotation.children"}
+
+  / %ul.annotator-widget.annotator-listing
+  /   %li.sidepanel
+  /     .avablock
+  /       %img.ava{:src => "images/{{annotation.avatar}}"}/
+  /   .papercontainer
+  /     .metadata
+  /       %a {{annotation.username}}
+  /       annotated:
+  /     .control
+  /       %a.goto
+  /         .inner To Annotation
+  /     %li.hyp-annotation.hyp-paper.hyp-detail.hyp-excerpt{"ng-click" => "showHide=!showHide"}
+  /       .page
+  /         %a{:href => "{{annotation.link}}"} {{annotation.page|truncate:60}}
+  /         .domain
+  /           {{node.domain}}
+  /           %img.favicon{"ng-src" => "http://{{annotation.domain}}/favicon.ico"}/
+  /       %blockquote{"ng-hide" => "showHide", "ng-show" => "annotation.srclevel"}
+  /         {{node.excerpt|truncate:140}}
+  /       %blockquote{"ng-show" => "showHide"}
+  /         {{node.excerpt}}
+  /       .topbar
+  /         .hyp-user {{node.username}}
+  /         .hyp-time {{node.time}}
+  /       .hyp-content{"ng-hide" => "showHide"} {{annotation.text|truncate:200}}
+  /       .hyp-content{"ng-show" => "showHide"} {{annotation.text}}
+  /       .hyp-thread
+  /         %ul.annotator-listing{"ng-show" => "showHide"}
+  /           %li.hyp-annotation.hyp-detail{"ng-include" => "'free_item_renderer.html'", "ng-repeat" => "reply in annotation.children"}
