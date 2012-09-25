@@ -12,22 +12,14 @@ body {
 
 #stream {
   padding-top: 6em;
-  width: 900px;
+  width: 70%;
   margin-left: auto;
   margin-right: auto;
   background: rgba(255, 255, 255, .5);
   .tile {
-    width: 100%;
-    padding: 1em;
-    margin-bottom: 1em;
+    position: relative;
+    margin: 1em;
     display: inline-block;
-    .domain {
-      text-align: right;
-      margin-bottom: .5em;
-      img{
-        float: right;
-      }
-    }
     .page {
       display: block;
       margin-bottom: 1em;
@@ -37,7 +29,6 @@ body {
     }
     .domain {
       float: right;
-
       .favicon {
         margin-left: .5em;
       }
@@ -51,33 +42,20 @@ body {
       font-weight: bold;
       opacity: .5;
       a {
-        @include linkbutton_right;
-        padding-right: 1.3em;
-        float: right;
-        div {
-          @include transition-property(opacity);
-          @include transition-duration(.14s);
-          @include transition-timing-function(ease-in);
-
-          overflow: hidden;
-          white-space: nowrap;
-        }
+        @include transition-property(opacity);
+        @include transition-duration(.14s);
+        @include transition-timing-function(ease-in);
+        opacity: 0;
       }
       &:hover {
         opacity: .8;
-      }
-      .innertext {
-        float: right;
       }
       .fave {
         background-image: url("../images/fave_2.png"); 
       }
       .goto {
-                  @include transition-property(opacity);
-          @include transition-duration(.14s);
-          @include transition-timing-function(ease-in);
-
-        opacity: 0;
+        @include linkbutton_right;
+        float: right;
         background-image: url("../images/goto_2.png"); 
       }
       .flag {
@@ -85,44 +63,19 @@ body {
       }
     }    
     .sidepanel {
-      float: left;
+      position: absolute;
+      left: 0;
+      top: 0;
       margin-right: 1em;
-
       .avablock {
-        float: right;
         margin-bottom: .5em;
         img {
           border-radius: .2em;
           @include smallshadow;
           opacity: .7;
-          width: 60px;
-          height: 60px;
-          // background-image: url("../images/avatar_1.jpg");
+          width: 4em;
+          height: 4em;
         }
-      }
-    }
-    .rightsidepanel {
-      float: left;
-      margin-left: 2em;
-      margin-top: 2em;
-      position: relative;
-      width: 100px;
-      .biggoto{
-        opacity: .1;
-        width: 50px;
-        height: 50px;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 100% 100%;
-        background-image: url("../images/goto_5.png");
-      }
-      .label {
-        bottom: 40%;
-        left: -20%;
-        position: absolute;
-        font-size: 1.3em;
-        font-weight: bold;
-        text-shadow:  white 1px 1px 0px;
       }
     }
     .metadata {
@@ -141,7 +94,7 @@ body {
       }
     }
     .papercontainer {
-      width: 600px;
+      margin-left: 5em;
       float: left;
     }
     .hyp-paper {
@@ -155,6 +108,7 @@ body {
 
     .hyp-annotation {
       margin-bottom: 0;
+      padding-left: 1em;
     }
   }
 }

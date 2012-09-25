@@ -9,10 +9,10 @@
         annotated:
       .control
         %a.goto
-          .inner To Annotation
+          To Source
       %li.hyp-paper
         .page
-          %a{:href => "{{annotation.link}}"} {{annotation.page|truncate:60}}
+          %a{:href => "{{annotation.link}}"} {{annotation.page|truncate:80}}
           .domain
             {{annotation.domain}}<img class="favicon" ng-src="http://{{annotation.domain}}/favicon.ico"/>
         .hyp-excerpt{"ng-click" => "showHide=!showHide"}
@@ -23,6 +23,7 @@
             .hyp-user {{annotation.username}}
             .hyp-time {{annotation.time}}
           .hyp-content {{annotation.text}}
-          .hyp-thread
+          .hyp-thread 
+            / {{annotation.children.length}} replies
             %ul.annotator-listing{"ng-show" => "showHide"}
               %li.hyp-annotation.hyp-detail{"ng-include" => "'replies-template.html'", "ng-repeat" => "reply in annotation.children"}
