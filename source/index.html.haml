@@ -5,5 +5,6 @@
 
 = partial "replies-template.haml"
 
-%ul
-  %li{"ng-include" => "'annotations-template.html'", "ng-repeat" => "annotation in annotations"}
+#stream
+  %ul.annotator-listing.annotator-widget
+    %li.tile{"ng-include" => "'annotations-template.html'", "ng-repeat" => "annotation in annotations"}

@@ -10,21 +10,19 @@
       .control
         %a.goto
           .inner To Annotation
-      %li.hyp-annotation.hyp-paper.hyp-detail.hyp-excerpt{"ng-click" => "showHide=!showHide"}
+      %li.hyp-paper
         .page
           %a{:href => "{{annotation.link}}"} {{annotation.page|truncate:60}}
           .domain
-            {{annotation.domain}}
-            %img.favicon{"ng-src" => "http://{{annotation.domain}}/favicon.ico"}/
-        %blockquote{"ng-hide" => "showHide", "ng-show" => "annotation.srclevel"}
-          {{annotation.excerpt|truncate:140}}
-        %blockquote{"ng-show" => "showHide"}
-          {{annotation.excerpt}}
-        .topbar
-          .hyp-user {{annotation.username}}
-          .hyp-time {{annotation.time}}
-        .hyp-content{"ng-hide" => "showHide"} {{annotation.text|truncate:200}}
-        .hyp-content{"ng-show" => "showHide"} {{annotation.text}}
-        .hyp-thread
-          %ul.annotator-listing{"ng-show" => "showHide"}
-            %li.hyp-annotation.hyp-detail{"ng-include" => "'replies-template.html'", "ng-repeat" => "reply in annotation.children"}
+            {{annotation.domain}}<img class="favicon" ng-src="http://{{annotation.domain}}/favicon.ico"/>
+        .hyp-excerpt{"ng-click" => "showHide=!showHide"}
+          %blockquote
+            {{annotation.excerpt}}
+        .hyp-annotation.hyp-detail
+          .topbar
+            .hyp-user {{annotation.username}}
+            .hyp-time {{annotation.time}}
+          .hyp-content {{annotation.text}}
+          .hyp-thread
+            %ul.annotator-listing{"ng-show" => "showHide"}
+              %li.hyp-annotation.hyp-detail{"ng-include" => "'replies-template.html'", "ng-repeat" => "reply in annotation.children"}

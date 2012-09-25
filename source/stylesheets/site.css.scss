@@ -145,6 +145,7 @@ body {
       float: left;
     }
     .hyp-paper {
+      @include pie-clearfix;
     }
 
     .favicon {
@@ -159,9 +160,16 @@ body {
 }
 
 .hyp-excerpt {
+  width: 50%;
+  float: left;
   blockquote {
     margin-bottom: 1em;
   }
+}
+
+.hyp-paper > .hyp-annotation {
+  float: left;
+  width: 50%;
 }
 
 .navtainer {
