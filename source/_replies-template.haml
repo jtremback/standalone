@@ -1,13 +1,9 @@
-%script{:id => "free_item_renderer.html", :type => "text/ng-template"}
-  {{reply.username}}
-  %ul
-    %li{"ng-include" => "'free_item_renderer.html'", "ng-repeat" => "reply in reply.children"}
-
-  / %a.hyp-threadexp{:href => "#collapse"}
-  / .topbar
-  /   .hyp-user {{reply.username}}
-  /   .hyp-time {{reply.time}}
-  / .hyp-content {{reply.text}}
-  / .hyp-thread
-  /   %ul.annotator-listing
-  /     %li.hyp-annotation.hyp-detail{"ng-include" => "'free_item_renderer.html'", "ng-repeat" => "reply in reply.children"}
+%script{:id => "replies-template.html", :type => "text/ng-template"}
+  %a.hyp-threadexp{:href => "#collapse"}
+  .topbar
+    .hyp-user {{reply.username}}
+    .hyp-time {{reply.time}}
+  .hyp-content {{reply.text}}
+  .hyp-thread
+    %ul.annotator-listing
+      %li.hyp-annotation.hyp-detail{"ng-include" => "'replies-template.html'", "ng-repeat" => "reply in reply.children"}
