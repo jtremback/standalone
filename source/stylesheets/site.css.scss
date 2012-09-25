@@ -15,7 +15,7 @@ body {
   width: 900px;
   margin-left: auto;
   margin-right: auto;
-
+  background: rgba(255, 255, 255, .5);
   .tile {
     width: 100%;
     padding: 1em;
@@ -190,15 +190,4 @@ body {
 
     }
   }
-}
-
-.rightside {
-  float: left;
-  width: 45%;
-}
-
-.leftside {
-  float: left;
-  width: 45%;
-  margin-right: 5%;
 }
