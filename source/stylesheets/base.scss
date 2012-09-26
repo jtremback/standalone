@@ -39,6 +39,10 @@ $gutter: 24;
   @include box-shadow($a $b 3px hsla(0, 0%, 0%, $c));
 }
 
+@mixin inset-smallshadow($a: 2px, $b: 2px, $c: .1) {
+  @include box-shadow(inset $a $b 3px hsla(0, 0%, 0%, $c));
+}
+
 @mixin plainform {
   color: $gray;
   background-color: #ffffff !important;

@@ -5,6 +5,12 @@
 
 = partial "replies-template.haml"
 
+= partial "nav.haml"
+
+
 #stream
+  .hyp-paper.tile
+    You have followed a link to an annotation. If you had the hypothes.is extension installed, the experience would be better. <a>Install it here</a>.  Or read <a>more about why</a>.
+
   %ul.annotator-listing.annotator-widget
     %li.tile{"ng-include" => "'annotations-template.html'", "ng-repeat" => "annotation in annotations"}

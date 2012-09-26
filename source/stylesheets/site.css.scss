@@ -11,7 +11,7 @@ body {
 }
 
 #stream {
-  padding-top: 6em;
+  padding-top: 4em;
   width: 70%;
   margin-left: auto;
   margin-right: auto;
@@ -103,7 +103,6 @@ body {
 
     .favicon {
       width: 16px;
-      margin-right: .5em;
     }
 
     .hyp-annotation {
@@ -126,30 +125,47 @@ body {
   width: 50%;
 }
 
-.navtainer {
+.nav {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 2;
   background: white;
   border-bottom: 1px solid $gray-lighter;
-  text-align: center;
-  .navinner {
-    height: 2em;
-    margin-top: 1em;
-    margin-bottom: 1em;
+  .inner {
+    @include pie-clearfix;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
-    width: 75%;
-    .titletext {
-      font-size: 2.5em;
-      float: left;
-    }
-    .a-dropdown {
+    border-left: 1px solid $gray-lighter;
+    border-right: 1px solid $gray-lighter;
+  }
+  .barbutton {
+    font-size: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: .5em;
+    border-left: 1px solid $gray-lighter;
+    border-right: 1px solid $gray-lighter;
+    height: 3em;
+    display: inline-block;
+    cursor: pointer;
+    &.right {
       float: right;
+      border-right: none;
     }
-    .streamnav {
-
+    &.left {
+      float: left;
+      border-left: none;
     }
+    &:hover {
+      @include inset-smallshadow(0px, 1px, .1);
+    }
+    &:active {
+      @include inset-smallshadow(0px, 2px, .1);
+    }
+  }
+  .title {
+    font-size: 2em;
   }
 }
