@@ -342,7 +342,7 @@ span.errorMsg {
     font-family: "Merriweather";
     font-size: 1em;
     line-height: 1.3em;
-    margin: 0 1em 1em;
+    margin-left: 1em;
 
     &:before {
       color: rgba(150, 150, 150, .5);
@@ -360,7 +360,7 @@ span.errorMsg {
     //   font-family: "PT Serif";
     //   font-size: 5em;
     //   position: absolute;
-    //   right: -.5em;
+    //   right: -.35em;
     //   bottom: .3em;
     // }
   }

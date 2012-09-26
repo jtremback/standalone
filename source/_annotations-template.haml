@@ -1,29 +1,31 @@
 %script{:id => "annotations-template.html", :type => "text/ng-template"}
-  %ul.annotator-widget.annotator-listing
-    %li.sidepanel
-      .avablock
-        %img.ava{:src => "images/{{annotation.avatar}}"}/
-    .papercontainer
-      .metadata
-        %a {{annotation.username}}
-        annotated:
-      .control
-        %a.goto
-          To Source
-      %li.hyp-paper
-        .page
-          %a{:href => "{{annotation.link}}"} {{annotation.page|truncate:80}}
-          .domain
-            {{annotation.domain}}<img class="favicon" ng-src="http://{{annotation.domain}}/favicon.ico"/>
-        .hyp-excerpt{"ng-click" => "showHide=!showHide"}
+  .sidepanel
+    .avablock
+      %img.ava{:src => "images/{{annotation.avatar}}"}/
+  .papercontainer
+    .metadata
+      %a {{annotation.username}}
+      annotated:
+    .control
+      %a.goto
+        To Source
+    .noiseknockout
+      .page
+        .domain
+          <img class="favicon" ng-src="http://{{annotation.domain}}/favicon.ico"/><a href="{{annotation.domain}}">{{annotation.domain}}</a> | <a href="{{annotation.link}}">{{annotation.page|truncate:80}}</a>
+
+      .floatainer
+        .hyp-excerpt.hyp-paper{"ng-click" => "showHide=!showHide"}
           %blockquote
             {{annotation.excerpt}}
-        .hyp-annotation.hyp-detail
-          .topbar
-            .hyp-user {{annotation.username}}
-            .hyp-time {{annotation.time}}
-          .hyp-content {{annotation.text}}
-          .hyp-thread 
-            / {{annotation.children.length}} replies
-            %ul.annotator-listing{"ng-show" => "showHide"}
-              %li.hyp-annotation.hyp-detail{"ng-include" => "'replies-template.html'", "ng-repeat" => "reply in annotation.children"}
+      .floatainer
+        .hyp-annotation.hyp-paper.hyp-detail
+          %div(style="padding-bottom: .5em;")
+            .topbar
+              .hyp-user {{annotation.username}}
+              .hyp-time {{annotation.time}}
+            .hyp-content {{annotation.text}}
+            .hyp-thread 
+              / {{annotation.children.length}} replies
+              %ul.annotator-listing{"ng-show" => "showHide"}
+                %li.hyp-annotation.hyp-detail{"ng-include" => "'replies-template.html'", "ng-repeat" => "reply in annotation.children"}

@@ -6,16 +6,26 @@
 @import "base";
 @import "common";
 
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
   background: url("../images/noise_1.png");
+}
+
+#main {
+  height: 100%;
 }
 
 #stream {
   padding-top: 4em;
   width: 70%;
+  height: 100%;
   margin-left: auto;
   margin-right: auto;
-  background: rgba(255, 255, 255, .5);
+  background: rgba(255, 255, 255, .7);
   .tile {
     position: relative;
     margin: 1em;
@@ -28,9 +38,9 @@ body {
       }
     }
     .domain {
-      float: right;
+
       .favicon {
-        margin-left: .5em;
+        margin-right: .5em;
       }
     }
     .control {
@@ -109,21 +119,28 @@ body {
       margin-bottom: 0;
       padding-left: 1em;
     }
+
+    .hyp-excerpt {
+      margin-right: 1em;
+      margin-bottom: 0;
+    }    
   }
 }
 
-.hyp-excerpt {
-  width: 50%;
-  float: left;
-  blockquote {
-    margin-bottom: 1em;
-  }
+.noiseknockout {
+  @include pie-clearfix;
+  background: url("../images/noise_1.png");
+  @include border-radius(.5em);
+  @include inset-smallshadow(1px, 1px, .1);
+  margin-bottom: 1em;
+  padding: 1em;
 }
 
-.hyp-paper > .hyp-annotation {
+.floatainer {
   float: left;
   width: 50%;
 }
+
 
 .nav {
   position: fixed;
@@ -144,7 +161,7 @@ body {
     font-size: 1em;
     padding-left: 1em;
     padding-right: 1em;
-    padding-top: .5em;
+    padding-top: .85em;
     border-left: 1px solid $gray-lighter;
     border-right: 1px solid $gray-lighter;
     height: 3em;
@@ -166,6 +183,9 @@ body {
     }
   }
   .title {
-    font-size: 2em;
+    padding-top: .7em;
+    & > span {
+      font-size: 2em;
+    }
   }
 }
